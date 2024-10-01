@@ -1,0 +1,9 @@
+@import "https://library-sdb.apps.bancolombia.com/bds/6.60.2/bds.min.css";
+
+body {
+  background-color: #F2F2F4;
+}
+
+.bc-vh-80 {
+  height: 80vh;
+}
