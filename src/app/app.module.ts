@@ -10,6 +10,7 @@ import {BcBadgeModule} from '@bancolombia/design-system-web/bc-badge';
 import { BcIconModule } from '@bancolombia/design-system-web/bc-icon';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
 import { BcInputFileModule } from '@bancolombia/design-system-web/bc-input-file';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BcInputFileModule } from '@bancolombia/design-system-web/bc-input-file'
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BcButtonModule,
     BcMenuModule,
     BcHeaderModule,
