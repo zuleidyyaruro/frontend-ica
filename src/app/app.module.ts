@@ -10,11 +10,20 @@ import {BcBadgeModule} from '@bancolombia/design-system-web/bc-badge';
 import { BcIconModule } from '@bancolombia/design-system-web/bc-icon';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
 import { BcInputFileModule } from '@bancolombia/design-system-web/bc-input-file';
+import { MenuComponent } from './components/menu/menu.component';
+import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
+import { TracingComponent } from './components/tracing/tracing.component';
+import { BcInputSelectModule } from '@bancolombia/design-system-web/bc-input-select';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UploadFileComponent
+    UploadFileComponent,
+    MenuComponent,
+    HomeComponent,
+    HeaderComponent,
+    TracingComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +34,7 @@ import { BcInputFileModule } from '@bancolombia/design-system-web/bc-input-file'
     BcInputFileModule,
     BcFloatMenuModule,
     BcBadgeModule,
+    BcInputSelectModule,
     BcIconModule.forRoot({ path: 'https://library-sdb.apps.bancolombia.com/bds/6.60.2' }),
   ],
   providers: [],
