@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 export type OptionInputSelect = {
   label: string;
@@ -12,6 +13,10 @@ export type OptionInputSelect = {
   templateUrl: './tracing.component.html'
 })
 export class TracingComponent implements OnInit {
+
+  form!: FormGroup;
+  indexPosition =1;
+  stepsArray: string[] = ['No procesado', 'Procesado'];
 
   values: OptionInputSelect[] = [
     { label: 'Abrego', value: 'abrego' },
@@ -314,13 +319,17 @@ export class TracingComponent implements OnInit {
     { label: 'Zipaquira', value: 'zipaquira' }
   ];
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.form = this.fb.group({
+      municipio: ['']
+    });
+
   }
 
   showSelectedValue(event: any) {
-    console.log('Selected value', event);
+
   }
 
 

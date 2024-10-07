@@ -15,6 +15,8 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TracingComponent } from './components/tracing/tracing.component';
 import { BcInputSelectModule } from '@bancolombia/design-system-web/bc-input-select';
+import { BcStepperModule } from '@bancolombia/design-system-web/bc-stepper';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import { BcInputSelectModule } from '@bancolombia/design-system-web/bc-input-sel
     MenuComponent,
     HomeComponent,
     HeaderComponent,
-    TracingComponent,
+    TracingComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,10 @@ import { BcInputSelectModule } from '@bancolombia/design-system-web/bc-input-sel
     BcInputFileModule,
     BcFloatMenuModule,
     BcBadgeModule,
+    BcStepperModule,
     BcInputSelectModule,
+    ReactiveFormsModule,
+    FormsModule,
     BcIconModule.forRoot({ path: 'https://library-sdb.apps.bancolombia.com/bds/6.60.2' }),
   ],
   providers: [],
