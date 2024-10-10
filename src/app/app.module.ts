@@ -10,6 +10,7 @@ import {BcBadgeModule} from '@bancolombia/design-system-web/bc-badge';
 import { BcIconModule } from '@bancolombia/design-system-web/bc-icon';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
 import { BcInputFileModule } from '@bancolombia/design-system-web/bc-input-file';
+import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -17,6 +18,7 @@ import { TracingComponent } from './components/tracing/tracing.component';
 import { BcInputSelectModule } from '@bancolombia/design-system-web/bc-input-select';
 import { BcStepperModule } from '@bancolombia/design-system-web/bc-stepper';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BcButtonModule,
     BcMenuModule,
     BcHeaderModule,

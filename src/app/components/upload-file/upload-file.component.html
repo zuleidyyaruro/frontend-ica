@@ -6,10 +6,10 @@
     <bc-input-file
       [dropArea]=true
       [maxSize]="5120000"
-      (getFilesAdded)='metodoParaCogerLosArchivos($event)'
+      (getFilesAdded)='loadFiles($event)'
       (changeStateMaxFiles)='listenerMaxFiles($event)'
-      [multipleFiles]=true
-      [validType]='["rar", "zip", "7zip"]'
+      [multipleFiles]=false
+      [validType]='["rar", "zip", "7z"]'
       [maxFiles]="1"
       [buttonLabel]="'Seleccionar archivo'"
       componentId="InputConDropArea">
