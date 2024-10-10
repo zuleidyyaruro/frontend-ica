@@ -1,0 +1,19 @@
+<bc-menu class="menu-app-showcase"  [hideProfileInSubmenu]="true">
+  <bc-menu-drawer [ngClass]="{'bc-d-none': !showMenu}">
+    <bc-menu-item [routerLink]="menu.path" *ngFor="let menu of menuItems" [identifierContent]="menu.identifierContent"
+      [text]="menu.text" [iconName]="menu.iconName"></bc-menu-item>
+  </bc-menu-drawer>
+  <bc-menu-main>
+    <bc-menu-body *ngFor="let menuBody of menuBodyItems" [identifier]="menuBody.identifier">
+      <bc-menu-column>
+        <bc-menu-section *ngFor="let menuSection of menuBody.sections" [title]="menuSection.title">
+          <bc-menu-option *ngFor="let menuOption of menuSection.options" [text]="menuOption.text"
+            [routerLink]="menuOption.path"></bc-menu-option>
+        </bc-menu-section>
+      </bc-menu-column>
+    </bc-menu-body>
+  </bc-menu-main>
+  <div class="bc-content-body">
+    <ng-content></ng-content>
+  </div>
+</bc-menu>
