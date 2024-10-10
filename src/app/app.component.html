@@ -1,20 +1,7 @@
-<bc-header [menuInteraction]="false" headerType="bc-header-wrapper-black" [fixed]="false">
-  <bc-header-left logoName="bancolombia-horizontal" channelName="PRICING TI"></bc-header-left>
-  <section>
-    <ul class="bc-header-nav">
-      <li class="bc-pointer bc-header-nav-item header__notifications bc-pl-0">
-      </li>
-      <li headerType="bc-header-wrapper-black"></li>
-      <li class="bc-header-nav-item header__profile">
-        <p class="bc-opensans-font-style-2-regular">
-          BINTEC
-        </p>
-      </li>
-    </ul>
-  </section>
-</bc-header>
+<app-header></app-header>
 
-<h1 class="bc-text-center bc-cibsans-font-style-7-bold bc-mt-4">Automatización consecución norma ICA</h1>
+<app-menu>
+  <h1 class="bc-text-center bc-cibsans-font-style-7-bold bc-mt-4">Automatización consecución norma ICA</h1>
+  <router-outlet></router-outlet>
+</app-menu>
 
-
-<router-outlet></router-outlet>

@@ -7,3 +7,11 @@ body {
 .bc-vh-80 {
   height: 80vh;
 }
+
+.bc-menu-global-container.bc-menu-with-header {
+  margin-top: 0px;
+}
+
+.bc-submenu-footer-container {
+  display: none;
+}
