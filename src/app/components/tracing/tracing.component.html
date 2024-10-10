@@ -5,9 +5,49 @@
     (valueOutput)="showSelectedValue($event)" formControlName="municipio">
   </bc-input-select>
 
-  <div class="bc-mt-5 bc-w-50 bc-m-auto" *ngIf="form.value.municipio">
-    <bc-stepper #stepper1 [steps]="stepsArray" [direction]="'horizontal'" [indexPosition]="indexPosition" >
-    </bc-stepper>
+  <div class="bc-mt-5  bc-m-auto" *ngIf="form.value.municipio">
+    <div class="bc-table-container" id="myTable">
+      <div class="bc-table-header-top">
+        <h6 class="bc-table-header-top-title">Documentos</h6>
+        <div class="bc-table-header-top-right-container">
+          <div class="bc-table-actions-container">
+            <div class="bc-table-paginator-container">
+              <nav class="bc-paginator" role="navigation" aria-label="paginador"
+                   (click)="onPageChange(currentPage)" [attr.totalregisters]="300" [attr.perpage]="5">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bc-table-content">
+        <table class="bc-table">
+          <thead>
+            <tr>
+              <th>Nombre Documento</th>
+              <th>Fecha Documento</th>
+              <th>Sin procesar, Extraído, Leído, Procesado </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let document of documents">
+              <td>{{ document.name }}</td>
+              <td>{{ document.date }}</td>
+              <td>
+                <bc-stepper [steps]="stepsArray" [direction]="'horizontal'"></bc-stepper>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="bc-table-footer">
+        <div class="bc-table-footer-container">
+          <nav class="bc-paginator" role="navigation" aria-label="paginador"
+               (click)="onPageChange(currentPage)" [attr.totalregisters]="300" [attr.perpage]="5">
+          </nav>
+        </div>
+      </div>
+    </div>
   </div>
+  
 
 </div>

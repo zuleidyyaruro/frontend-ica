@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { DocumentService, myDocument } from '../document.service';
 
 export type OptionInputSelect = {
   label: string;
   value: any;
   icon?: string
 }
+
+
 
 
 @Component({
@@ -15,9 +18,21 @@ export type OptionInputSelect = {
 export class TracingComponent implements OnInit {
 
   form!: FormGroup;
-  indexPosition =1;
-  stepsArray: string[] = ['No procesado', 'Procesado'];
 
+  indexPosition =1;
+
+// Array con valores vacíos, pero que se interpretarán como los pasos correctos
+stepsArray: string[] = ['', '', '', ''];
+
+// Array para asociar internamente los valores de los pasos
+stepLabels: string[] = ['Sin procesar', 'Extraído', 'Leído', 'Procesado'];
+
+// Función para mapear los valores internos al array de `stepsArray`
+getStepLabel(index: number): string {
+  return this.stepLabels[index] || '';
+}
+
+  documents: myDocument[] = [];
   values: OptionInputSelect[] = [
     { label: 'Abrego', value: 'abrego' },
     { label: 'Acacias', value: 'acacias' },
@@ -319,18 +334,41 @@ export class TracingComponent implements OnInit {
     { label: 'Zipaquira', value: 'zipaquira' }
   ];
 
-  constructor(private fb: FormBuilder) { }
+  currentPage: number = 1;
 
+
+
+  constructor(private fb: FormBuilder, private documentService: DocumentService) { }
+  
+
+  onPageChange(page: number): void {
+    this.documentService.changePage(page);
+    this.documentService.getPaginatedDocuments(page).subscribe(data => {
+      this.documents = data;
+    });
+  }
   ngOnInit() {
     this.form = this.fb.group({
       municipio: ['']
     });
+    this.documentService.loadDocuments();
+    this.documentService.getPaginatedDocuments(this.currentPage).subscribe(data => {
+      this.documents = data;
+    });
 
+    this.documentService.getCurrentPage().subscribe(page => {
+      this.currentPage = page;
+    });
   }
+
+  
 
   showSelectedValue(event: any) {
 
   }
+
+
+
 
 
 }
