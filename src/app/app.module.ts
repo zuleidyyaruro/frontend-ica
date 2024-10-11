@@ -7,7 +7,7 @@ import { BcMenuModule } from '@bancolombia/design-system-web/bc-menu';
 import {BcHeaderModule} from '@bancolombia/design-system-web/bc-header';
 import {BcFloatMenuModule} from '@bancolombia/design-system-web/bc-float-menu';
 import {BcBadgeModule} from '@bancolombia/design-system-web/bc-badge';
-import { BcIconModule } from '@bancolombia/design-system-web/bc-icon';
+import {BcIconModule } from '@bancolombia/design-system-web/bc-icon';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
 import { BcInputFileModule } from '@bancolombia/design-system-web/bc-input-file';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,6 +19,7 @@ import { BcInputSelectModule } from '@bancolombia/design-system-web/bc-input-sel
 import { BcStepperModule } from '@bancolombia/design-system-web/bc-stepper';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResultsComponent } from './components/results/results.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ResultsComponent } from './components/results/results.component';
     HomeComponent,
     HeaderComponent,
     TracingComponent,
-    ResultsComponent
+    ResultsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,8 @@ import { ResultsComponent } from './components/results/results.component';
     BcInputSelectModule,
     ReactiveFormsModule,
     FormsModule,
-    BcIconModule.forRoot({ path: 'https://library-sdb.apps.bancolombia.com/bds/6.60.2' }),
+    BcIconModule.forRoot({ path: 'https://library-sdb.apps.bancolombia.com/bds/6.60.2' })
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
