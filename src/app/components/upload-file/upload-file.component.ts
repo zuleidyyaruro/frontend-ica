@@ -322,7 +322,7 @@ export class UploadFileComponent {
 
 
   loadFiles(file: File[]) {
-    if (this.municipality = ""){
+    if (this.municipality !== ""){
       const formData = new FormData();
       formData.append('file', file[0], file[0].name);
       formData.append('municipality', this.municipality);

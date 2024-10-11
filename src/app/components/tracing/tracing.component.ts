@@ -18,11 +18,10 @@ export class TracingComponent implements OnInit {
 
   form!: FormGroup;
 
-  indexPosition =0;
+  indexPosition = 1;
 
-stepsArray: string[] = ['', '', '', ''];
-
-stepLabels: string[] = ['Sin procesar', 'Extraído', 'Leído', 'Procesado'];
+  stepsArray: string[] = ['', '', '', '', '', ''];
+  stepLabels: string[] = ['Documento', 'Fecha','Sin procesar', 'Descargando archivos', 'Normalizando', 'Generando imagen', 'Procesando', 'Finalizado'];
 
 getStepLabel(index: number): string {
   return this.stepLabels[index] || '';
@@ -334,7 +333,6 @@ getStepLabel(index: number): string {
   showtable = false;
 
 
-
   constructor(private fb: FormBuilder, private documentService: DocumentService, private filesService: FilesService) { }
   
 
@@ -363,8 +361,9 @@ getStepLabel(index: number): string {
     this.filesService.getProcess(municipality).subscribe({
         next: (data) => {
             console.log(data[0].task);
-            this.indexPosition = (data[0].task)-1;
+            this.indexPosition = (data[0].task);
             this.showtable = true;
+            
         },
         error: () => {
             console.log("error");
