@@ -1,8 +1,12 @@
 
 <div class="bc-mt-5 bc-flex bc-justify-content-center bc-align-items-center bc-direction-column">
 
+  <br>
+  <bc-input-select componentId="bc-select2" formatType="simple" [values]="values" label="Selecciona un municipio"
+  onchange="" (valueOutput)="showSelectedValue($event)" formControlName="municipio">
+  </bc-input-select>
+<br>
   <h5 class="bc-cibsans-font-style-5-extralight ">Sube tu archivo aquí</h5>
-
     <bc-input-file
       [dropArea]=true
       [maxSize]="5120000"
@@ -14,6 +18,13 @@
       [buttonLabel]="'Seleccionar archivo'"
       componentId="InputConDropArea">
     </bc-input-file>
+
+
+    <button (click)="downloadRobot()" class="bc-w-50 bc-mt-5" bc-button>
+      <bc-icon>downloads</bc-icon>
+      <span>Descargar robot para extraer zip de manera máxima.</span>
+    </button>
+
   </div>
 
 
