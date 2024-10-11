@@ -2,7 +2,7 @@
 
 <div class="bc-w-50 bc-m-auto bc-mt-5" [formGroup]="form">
   <bc-input-select componentId="bc-select2" formatType="simple" [values]="values" label="Selecciona un municipio"
-    (valueOutput)="showSelectedValue($event)" formControlName="municipio">
+   onchange="" (valueOutput)="showSelectedValue($event)" formControlName="municipio">
   </bc-input-select>
 
   <div class="bc-mt-5  bc-m-auto" *ngIf="form.value.municipio">
@@ -19,21 +19,25 @@
           </div>
         </div>
       </div>
-      <div class="bc-table-content">
+      <div *ngIf="showtable" class="bc-table-content">
         <table class="bc-table">
           <thead>
             <tr>
-              <th>Nombre Documento</th>
-              <th>Fecha Documento</th>
-              <th>Sin procesar, Extraído, Leído, Procesado </th>
+              <th>Documento</th>
+              <th>Fecha Cargue</th>
+              <th>Sin procesar</th>
+              <th>Extracción</th>
+              <th>Conversión</th>
+              <th>Finalizado</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let document of documents">
               <td>{{ document.name }}</td>
               <td>{{ document.date }}</td>
-              <td>
-                <bc-stepper [steps]="stepsArray" [direction]="'horizontal'"></bc-stepper>
+              <td colspan="4">
+                <div style="height: 25px;"></div>
+                <bc-stepper style="margin-top: 20px;" [steps]="stepsArray" [direction]="'horizontal'" [indexPosition] = "indexPosition"></bc-stepper>
               </td>
             </tr>
           </tbody>

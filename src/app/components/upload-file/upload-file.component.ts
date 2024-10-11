@@ -13,6 +13,7 @@ export class UploadFileComponent {
   loadFiles(file: File[]) {
     const formData = new FormData();
     formData.append('file', file[0], file[0].name);
+    formData.append('municipality', "medellin");
     this.filesService.uploadFile(formData).subscribe({
       next: () => {
         console.log("Cargado")

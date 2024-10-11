@@ -13,8 +13,13 @@ export class FilesService {
 
   private readonly apiEvcBasePath = environment.apis.file.basePath;
   private readonly uploadFilePath = environment.apis.file.uploadFilePath;
+  private readonly getProcessPath = environment.apis.file.getProcessPath;
 
   uploadFile(formData: FormData): Observable<any> {
     return this.http.post<any>(`${this.apiEvcBasePath}${this.uploadFilePath}`, formData);
+  }
+
+  getProcess(municipality: string): Observable<any> {
+    return this.http.get<any>(`${this.apiEvcBasePath}${this.getProcessPath}/${municipality}`);
   }
 }

@@ -44,6 +44,7 @@ export class MenuComponent implements OnInit {
       { identifierContent: "home", text: "Inicio", iconName: "home", path: "" },
       { identifierContent: "upload", text: "Subir archivos", iconName: "cloud-upload", path: "/upload" },
       { identifierContent: "tracing", text: "Seguimiento", iconName: "receipt", path: "/tracing" },
+      { identifierContent: "performance", text: "Resultados", iconName: "performance", path: "/tracing" },
 
     ];
 
