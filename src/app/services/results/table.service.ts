@@ -14,6 +14,7 @@ export class TableService {
         {
           "company": "Banco",
           "municipio": "Abrego",
+          "tarifa_ica":"8",
           "avisos_y_tableros": "15%",
           "aplica_sobretasa": "Sí",
           "tarifa_sobretasa": "2,0%",
@@ -28,6 +29,7 @@ export class TableService {
         {
           "company": "Banco",
           "municipio": "Acacias",
+          "tarifa_ica":"8",
           "avisos_y_tableros": "15%",
           "aplica_sobretasa": "Sí",
           "tarifa_sobretasa": "2,0%",
@@ -42,6 +44,7 @@ export class TableService {
         {
           "company": "Banco",
           "municipio": "Aguachica",
+          "tarifa_ica":"8",
           "avisos_y_tableros": "15%",
           "aplica_sobretasa": "Sí",
           "tarifa_sobretasa": "2,0%",
@@ -56,6 +59,7 @@ export class TableService {
         {
           "company": "Banco",
           "municipio": "Aguadas",
+          "tarifa_ica":"5",
           "avisos_y_tableros": "15%",
           "aplica_sobretasa": "Sí",
           "tarifa_sobretasa": "2,0%",
@@ -70,6 +74,7 @@ export class TableService {
         {
           "company": "Banco",
           "municipio": "Abrego",
+          "tarifa_ica":"8",
           "avisos_y_tableros": "15%",
           "aplica_sobretasa": "Sí",
           "tarifa_sobretasa": "2,0%",
@@ -84,6 +89,7 @@ export class TableService {
         {
           "company": "Banco",
           "municipio": "AguaAzul",
+          "tarifa_ica":"8",
           "avisos_y_tableros": "15%",
           "aplica_sobretasa": "Sí",
           "tarifa_sobretasa": "2,0%",
@@ -98,6 +104,7 @@ export class TableService {
         {
           "company": "Banco",
           "municipio": "Abrego",
+          "tarifa_ica":"8",
           "avisos_y_tableros": "15%",
           "aplica_sobretasa": "Sí",
           "tarifa_sobretasa": "2,0%",
@@ -112,6 +119,7 @@ export class TableService {
         {
           "company": "Banco",
           "municipio": "Aipe",
+          "tarifa_ica":"8",
           "avisos_y_tableros": "15%",
           "aplica_sobretasa": "Sí",
           "tarifa_sobretasa": "2,0%",
@@ -126,6 +134,7 @@ export class TableService {
         {
           "company": "Banco",
           "municipio": "Abrego",
+          "tarifa_ica":"8",
           "avisos_y_tableros": "15%",
           "aplica_sobretasa": "Sí",
           "tarifa_sobretasa": "2,0%",
@@ -140,6 +149,7 @@ export class TableService {
         {
           "company": "Banco",
           "municipio": "Albania",
+          "tarifa_ica":"8",
           "avisos_y_tableros": "15%",
           "aplica_sobretasa": "Sí",
           "tarifa_sobretasa": "2,0%",
@@ -154,6 +164,7 @@ export class TableService {
         {
           "company": "Banco",
           "municipio": "Abrego",
+          "tarifa_ica":"8",
           "avisos_y_tableros": "15%",
           "aplica_sobretasa": "Sí",
           "tarifa_sobretasa": "2,0%",
