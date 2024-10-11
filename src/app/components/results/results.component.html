@@ -1,0 +1,54 @@
+<div class="bc-table-container">
+    <div class="bc-table-header-top">
+      <h6 class="bc-table-header-top-title">Resultados</h6>
+    </div>
+    <div class="bc-table-content">
+      <table class="bc-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th colspan="4">
+              <p class="bc-text-center">Sobretasa Bomberil</p>
+            </th>
+            <th colspan="5">
+              <p class="bc-text-center">Oficina Adicional</p>
+            </th>
+          </tr>
+          <tr>
+            <th>Avisos y tableros (15% sobre ICA)</th>
+            <th>Aplica</th>
+            <th>Tarifa</th>
+            <th>Detalle</th>
+            <th>Equivalencia</th>
+            <th>Aplica</th>
+            <th>No. de Oficinas Adicional</th>
+            <th>Tarifa</th>
+            <th>Detalle</th>
+            <th>Equivalencia</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr *ngFor="let row of tableData.resultados">
+            <td>{{ row.avisos_y_tableros }}</td>
+            <td>{{ row.aplica_sobretasa }}</td>
+            <td>{{ row.tarifa_sobretasa }}</td>
+            <td>{{ row.detalle_sobretasa }}</td>
+            <td>{{ row.equivalencia_sobretasa }}</td>
+            <td>{{ row.aplica_oficina }}</td>
+            <td>{{ row.numero_oficinas }}</td>
+            <td>{{ row.tarifa_oficina }}</td>
+            <td>{{ row.detalle_oficina }}</td>
+            <td>{{ row.equivalencia_oficina }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="bc-d-flex bc-flex-row bc-justify-content-center  bc-align-items-center bc-mt-5" > 
+  <button  bc-button   width="hug">
+    <span>Descargar Excel</span>
+    <bc-icon>download</bc-icon>
+  </button>
+</div>

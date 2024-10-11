@@ -18,6 +18,7 @@ import { TracingComponent } from './components/tracing/tracing.component';
 import { BcInputSelectModule } from '@bancolombia/design-system-web/bc-input-select';
 import { BcStepperModule } from '@bancolombia/design-system-web/bc-stepper';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ResultsComponent } from './components/results/results.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MenuComponent,
     HomeComponent,
     HeaderComponent,
-    TracingComponent
+    TracingComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
