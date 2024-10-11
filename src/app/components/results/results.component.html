@@ -1,4 +1,4 @@
-<div class="bc-table-container">
+<div class="bc-table-container bc-mt-5">
     <div class="bc-table-header-top">
       <h6 class="bc-table-header-top-title">Resultados</h6>
     </div>
@@ -6,7 +6,8 @@
       <table class="bc-table">
         <thead>
           <tr>
-            <th></th>
+            <th colspan="4">
+              </th>
             <th colspan="4">
               <p class="bc-text-center">Sobretasa Bomberil</p>
             </th>
@@ -15,6 +16,8 @@
             </th>
           </tr>
           <tr>
+            <th>Compañía</th>
+            <th>Municipio</th>
             <th>Avisos y tableros (15% sobre ICA)</th>
             <th>Aplica</th>
             <th>Tarifa</th>
@@ -30,6 +33,8 @@
   
         <tbody>
           <tr *ngFor="let row of tableData.resultados">
+            <td>{{ row.company }}</td>
+            <td>{{ row.municipio }}</td>
             <td>{{ row.avisos_y_tableros }}</td>
             <td>{{ row.aplica_sobretasa }}</td>
             <td>{{ row.tarifa_sobretasa }}</td>
@@ -44,7 +49,7 @@
         </tbody>
       </table>
     </div>
-  </div>
+</div>
 
   <div class="bc-d-flex bc-flex-row bc-justify-content-center  bc-align-items-center bc-mt-5" > 
   <button  bc-button   width="hug">
