@@ -20,8 +20,7 @@ export class DocumentService {
 
   loadDocuments(): void {
     const documents: myDocument[] = [
-      { name: 'Documento 1', date: '2024-10-09', step:'1' },
-      { name: 'Documento 2', date: '2024-10-08', step:'2' },
+      { name: 'Documento 1', date: '2024-10-11', step:'1' },
     ];
     this.documentsSubject.next(documents);
   }

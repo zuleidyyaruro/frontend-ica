@@ -5,10 +5,10 @@
    onchange="" (valueOutput)="showSelectedValue($event)" formControlName="municipio">
   </bc-input-select>
 
-  <div class="bc-mt-5  bc-m-auto" *ngIf="form.value.municipio">
-    <div class="bc-table-container" id="myTable">
+  <div class="bc-mt-5 " *ngIf="form.value.municipio">
+    <div class="bc-table-container" style="width: 1150px; margin-left: -184px;" id="myTable">
       <div class="bc-table-header-top">
-        <h6 class="bc-table-header-top-title">Documentos</h6>
+        <h6 class="bc-table-header-top-title">Proceso</h6>
         <div class="bc-table-header-top-right-container">
           <div class="bc-table-actions-container">
             <div class="bc-table-paginator-container">
@@ -23,19 +23,16 @@
         <table class="bc-table">
           <thead>
             <tr>
-              <th>Documento</th>
-              <th>Fecha Cargue</th>
-              <th>Sin procesar</th>
-              <th>Extracción</th>
-              <th>Conversión</th>
-              <th>Finalizado</th>
+              <th *ngFor="let stepLabel of stepLabels">
+                {{stepLabel}}
+              </th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let document of documents">
               <td>{{ document.name }}</td>
               <td>{{ document.date }}</td>
-              <td colspan="4">
+              <td colspan="7">
                 <div style="height: 25px;"></div>
                 <bc-stepper style="margin-top: 20px;" [steps]="stepsArray" [direction]="'horizontal'" [indexPosition] = "indexPosition"></bc-stepper>
               </td>
