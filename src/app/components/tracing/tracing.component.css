@@ -1,0 +1,3 @@
+article.bc-stepper-horizontal[role=tablist][aria-label], article.bc-stepper-horizontal[role=tablist][aria-labelledby]{
+    border: 1px solid red !important;
+}

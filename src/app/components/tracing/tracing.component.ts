@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { DocumentService, myDocument } from '../document.service';
+import { FilesService } from 'src/app/services/files/files.service';
 
 export type OptionInputSelect = {
   label: string;
@@ -8,26 +9,21 @@ export type OptionInputSelect = {
   icon?: string
 }
 
-
-
-
 @Component({
   selector: 'app-tracing',
-  templateUrl: './tracing.component.html'
+  templateUrl: './tracing.component.html',
+  styleUrls: ['./tracing.component.css']
 })
 export class TracingComponent implements OnInit {
 
   form!: FormGroup;
 
-  indexPosition =1;
+  indexPosition =0;
 
-// Array con valores vacíos, pero que se interpretarán como los pasos correctos
 stepsArray: string[] = ['', '', '', ''];
 
-// Array para asociar internamente los valores de los pasos
 stepLabels: string[] = ['Sin procesar', 'Extraído', 'Leído', 'Procesado'];
 
-// Función para mapear los valores internos al array de `stepsArray`
 getStepLabel(index: number): string {
   return this.stepLabels[index] || '';
 }
@@ -335,10 +331,11 @@ getStepLabel(index: number): string {
   ];
 
   currentPage: number = 1;
+  showtable = false;
 
 
 
-  constructor(private fb: FormBuilder, private documentService: DocumentService) { }
+  constructor(private fb: FormBuilder, private documentService: DocumentService, private filesService: FilesService) { }
   
 
   onPageChange(page: number): void {
@@ -361,10 +358,21 @@ getStepLabel(index: number): string {
     });
   }
 
-  
-
+  getProcess(municipality: string) {
+    this.showtable = false;
+    this.filesService.getProcess(municipality).subscribe({
+        next: (data) => {
+            console.log(data[0].task);
+            this.indexPosition = (data[0].task)-1;
+            this.showtable = true;
+        },
+        error: () => {
+            console.log("error");
+        }
+    });
+}
   showSelectedValue(event: any) {
-
+    this.getProcess(event)
   }
 
 

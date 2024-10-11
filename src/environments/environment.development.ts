@@ -3,7 +3,8 @@ export const environment = {
   apis: {
     file: {
       basePath: ' http://127.0.0.1:8000',
-      uploadFilePath: '/file/unpack',
+      uploadFilePath: '/file/upload',
+      getProcessPath: '/file/process',
     }
   },
 };
